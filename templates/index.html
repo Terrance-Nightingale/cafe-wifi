@@ -1,0 +1,50 @@
+{% include "header.html" %}
+
+<body>
+  <!-- Top Container -->
+  <main>
+  <section class="py-5 text-center container" id="main-box">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Check out our cafes!</h1>
+        <p class="lead text-body-secondary">We've evaluated a variety of cafes, so you don't have to. With information on Wi-Fi availability, seating, coffee prices and more, your preferred coffee shop is just a click away!</p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Main call to action</a>
+          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Cards -->
+  <div class="album py-5 bg-body-tertiary" id="card-box">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for cafe in cafes %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="cafe-image"  src="{{ cafe.img_url }}">
+            <div class="card-body">
+              <h3> {{ cafe.name }}</h3>
+              {% if cafe.has_wifi == True: %}
+                <p class="card-text">Wi-Fi: Yes</p>
+              {% else: %}
+                <p class="card-text">Wi-Fi: Yes</p>
+              {% endif %}
+                <p class="card-text">Price: {{ cafe.coffee_price }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-secondary text-decoration-none" href="{{ url_for('cafe') }}">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+{% include "footer.html" %}
+
+</html>
