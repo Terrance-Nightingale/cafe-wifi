@@ -1,7 +1,67 @@
 {% include "header.html" %}
 
 <body>
-<h1>This is a test</h1>
+    <div class="container px-4 py-5" id="cafe-box">
+        <h2 class="pb-2 border-bottom">{{ cafe.name }}</h2>
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+            <div class="col d-flex flex-column align-items-start gap-2">
+                <img class="cafe-page-image" src="{{ cafe.img_url }}" alt="Image of the cafe interior.">
+                <a href="{{ cafe.map_url }}" class="btn btn-primary btn-lg" id="map-button">Google Map Location</a>
+            </div> 
+            <div class="col">
+                <div class="row row-cols-1 row-cols-sm-2 g-7">
+                    <ul>
+                        <li><div class="col d-flex flex-column">
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Location</h4>
+                            <p class="text-body-secondary">{{ cafe.location }}</p>
+                        </div></li>
+                        <li><div class="col d-flex flex-column gap-2">
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Cafe Price</h4>
+                            <p class="text-body-secondary">{{ cafe.coffee_price }}</p>
+                        </div></li>
+                        <li><div class="col d-flex flex-column gap-2">
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Seats</h4>
+                            <p class="text-body-secondary">{{ cafe.seats }}</p>
+                        </div></li>
+                        <li><div class="col d-flex flex-column gap-2">
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Restroom</h4>
+                            {% if cafe.has_toilet == True: %}
+                            <p class="text-body-secondary">Yes</p>
+                            {% else: %}
+                            <p class="text-body-secondary">No</p>
+                            {% endif %}
+                        </div></li>
+                    </ul>
+                    <ul>
+                        <li><div class="col d-flex flex-column gap-2">
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Wi-Fi</h4>
+                            {% if cafe.has_wifi == True: %}
+                            <p class="text-body-secondary">Yes</p>
+                            {% else: %}
+                            <p class="text-body-secondary">No</p>
+                            {% endif %}
+                        </div></li>
+                        <li><div class="col d-flex flex-column gap-2">
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Electrical Sockets</h4>
+                            {% if cafe.has_sockets == True: %}
+                            <p class="text-body-secondary">Yes</p>
+                            {% else: %}
+                            <p class="text-body-secondary">No</p>
+                            {% endif %}
+                        </div></li>
+                        <li><div class="col d-flex flex-column gap-2">
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Able to Take Calls</h4>
+                            {% if cafe.can_take_calls == True: %}
+                            <p class="text-body-secondary">Yes</p>
+                            {% else: %}
+                            <p class="text-body-secondary">No</p>
+                            {% endif %}
+                        </div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
 </body>
 
 {% include "footer.html" %}

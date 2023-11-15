@@ -19,16 +19,14 @@
 <!-- Header -->
 <div class="container fixed-top" id="header">
     <header class="d-flex flex-wrap justify-content-center py-2 mb-3 border-bottom">
-        <div style="margin-right: 20px;">
+        <span style="margin: 0 auto">
+        <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto">
             <i class="bi-cup-hot-fill" id="coffee-logo"></i>
+            <span class="fs-4" style="font-size: 30px !important; font-weight: bold !important;">Cafe Wi-fi</span>
         </div>
-            <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto">
-                <span class="fs-4">Cafe Wi-fi</span>
-            </div>
+        </span>
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link active" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link active" id="home-button" aria-current="page">Home</a></li>
         </ul>
     </header>
 </div>

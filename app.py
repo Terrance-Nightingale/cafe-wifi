@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap4
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.expression import func
 
@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cafes.db'
 db = SQLAlchemy()
 db.init_app(app)
 
-Bootstrap(app)
+Bootstrap4(app)
 
 
 # Cafe Config
@@ -41,9 +41,10 @@ def home():
     return render_template("index.html", cafes=cafes)
 
 
-@app.route("/cafe")
-def cafe():
-    return render_template("cafe.html")
+@app.route("/cafe/<int:cafe_id>")
+def cafe(cafe_id):
+    cafe_page = db.get_or_404(Cafe, cafe_id)
+    return render_template("cafe.html", cafe=cafe_page)
 
 
 if __name__ == '__main__':

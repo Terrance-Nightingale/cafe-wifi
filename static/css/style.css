@@ -21,9 +21,22 @@ body {
     border-radius: 5px;
 }
 
+.cafe-page-image {
+    max-width: 100%;
+    height: 450px;
+    border-radius: 5px;
+}
+
+.latte-image {
+    max-height: 100%;
+    width: 400px;
+    margin-left: 100px;
+}
+
  #coffee-logo {
     font-size: 2.4rem;
     color: rgba(124, 84, 32, 0.849);
+    margin-right: 20px;
  }
 
 #header {
@@ -45,7 +58,41 @@ body {
 }
 
 #main-box {
-    background-color: white;
+    background-color: rgba(66, 58, 53, 0.904);
+    border: 10px !important;
+    border-color: black !important;
     border-radius: 5px;
     margin-top: 120px;
+}
+
+#cafe-box {
+    background-color: white;
+    margin-top: 150px;
+    border-radius: 5px;
+}
+
+#title-text {
+    color: white; 
+    text-align: left; 
+    font-size: 34px;
+}
+
+#home-button {
+    background-color: rgb(34, 34, 34);
+    margin-left: 50px;
+}
+
+#home-button:hover {
+    background-color: rgb(63, 63, 63);
+}
+
+#map-button {
+    margin-top: 20px;
+    background-color: rgb(23, 167, 23);
+    border-color: rgb(23, 167, 23);
+}
+
+#map-button:hover {
+    background-color: rgb(31, 196, 31);
+    border-color: rgb(31, 196, 31);
 }
